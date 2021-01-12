@@ -18,10 +18,12 @@ from django.urls import path
 
 # Incluidos no curso
 from django.conf.urls import url
-from .views import home, clientes
+from .views import home, clientes, cliente_detalhe, cliente_por_nome
 
 urlpatterns = [
+    url(r'^$', home),
+    url(r'^clientes$', clientes),
+    url(r'^cliente/(?P<id>\d+)$', cliente_detalhe),
+    url(r'^cliente/(?P<nome>\w+)$', cliente_por_nome),
     path('admin/', admin.site.urls),
-    url(r'^clientes', clientes),
-    url(r'', home),
 ]
