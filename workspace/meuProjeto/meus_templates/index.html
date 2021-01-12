@@ -1,34 +1,43 @@
-<h1>Olá Mundo</h1>
+{% extends "base.html" %}
 
-<ul>
-    <li>Item 2</li>
-    <li>Item 2</li>
-    <li>Item 2</li>
-    <li>Item 2</li>
-    <li>Item 2</li>
-</ul>
+{% block title %} Seja bem-vindo - Página Principal {% endblock  %}
 
-<p>Condicionais</p>
-{% if sexo == 'M' or sexo == 'm' %}
-    Olá Senhor {{ nome }}
-{% elif sexo == 'F' or sexo == 'f' %}
-    Olá Senhora {{ nome }}
-{% else %}
-    Olá {{ nome }}
-{% endif %}
-<br>
-<br>
-<p>Loops</p>
-<ul>
-    {% for pessoa in lista %}
-        <li>
-            {% if pessoa.sexo == 'M' or sexo == 'm' %}
-                Olá Senhor {{ pessoa.nome }}
-            {% elif pessoa.sexo == 'F' %}
-                Olá Senhora {{ pessoa.nome }}
-            {% else %}
-                Olá {{ pessoa.nome }}
-            {% endif %}
-        </li>
-    {% endfor %}
-</ul>
+{% block main %}
+    <h1>Olá Mundo</h1>
+
+    <ul>
+        <li>Item 2</li>
+        <li>Item 2</li>
+        <li>Item 2</li>
+        <li>Item 2</li>
+        <li>Item 2</li>
+    </ul>
+
+    <p>Condicionais</p>
+    {% if sexo == 'M' or sexo == 'm' %}
+        Olá Senhor {{ nome }}
+    {% elif sexo == 'F' or sexo == 'f' %}
+        Olá Senhora {{ nome }}
+    {% else %}
+        Olá {{ nome }}
+    {% endif %}
+    <br>
+    <br>
+    <p>Loops</p>
+    <ul>
+        {% for pessoa in lista %}
+            <li>
+                {% if pessoa.sexo == 'M' or sexo == 'm' %}
+                    Olá Senhor {{ pessoa.nome }}
+                {% elif pessoa.sexo == 'F' %}
+                    Olá Senhora {{ pessoa.nome }}
+                {% else %}
+                    Olá {{ pessoa.nome }}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <button class="btn btn-info">clique aqui</button>
+
+{% endblock  %}
