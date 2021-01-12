@@ -2,6 +2,15 @@ from django.db import models
 
 # Create your models here.
 
+
+class CPF(models.Model):
+    numero = models.CharField(max_length=11)
+    data_exp = models.DateTimeField(auto_now=False)
+
+    def __str__(self):
+        return self.numero
+
+
 # comandos
 # python manage.py makemigrations
 # python manage.py migrate
@@ -11,6 +20,7 @@ class Cliente(models.Model):
     salario = models.DecimalField(max_digits=10, decimal_places=2)
     idade = models.IntegerField()
     email = models.EmailField()
+    cpf = models.OneToOneField(CPF, blank=True, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
