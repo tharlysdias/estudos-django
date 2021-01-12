@@ -8,4 +8,27 @@
     <li>Item 2</li>
 </ul>
 
-{{ minha_variavel }}
+<p>Condicionais</p>
+{% if sexo == 'M' or sexo == 'm' %}
+    Olá Senhor {{ nome }}
+{% elif sexo == 'F' or sexo == 'f' %}
+    Olá Senhora {{ nome }}
+{% else %}
+    Olá {{ nome }}
+{% endif %}
+<br>
+<br>
+<p>Loops</p>
+<ul>
+    {% for pessoa in lista %}
+        <li>
+            {% if pessoa.sexo == 'M' or sexo == 'm' %}
+                Olá Senhor {{ pessoa.nome }}
+            {% elif pessoa.sexo == 'F' %}
+                Olá Senhora {{ pessoa.nome }}
+            {% else %}
+                Olá {{ pessoa.nome }}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

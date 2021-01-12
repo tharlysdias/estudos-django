@@ -3,5 +3,14 @@ from django.shortcuts import render
 
 
 def home(request):
-    minha_variavel = 'Programe Facil'
-    return render(request, 'index.html', {'minha_variavel': minha_variavel})
+    sexo = 'M'
+    nome = 'Alfredo'
+    lista = [
+        {'nome': 'João', 'sexo': 'M'},
+        {'nome': 'José', 'sexo': 'm'},
+        {'nome': 'Maria', 'sexo': 'F'},
+        {'nome': 'Joaquina', 'sexo': 'f'},
+    ]
+
+    informacoes = {'lista': lista, 'sexo': sexo, 'nome': nome}
+    return render(request, 'index.html', informacoes)
