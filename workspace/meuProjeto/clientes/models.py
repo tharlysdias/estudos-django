@@ -33,6 +33,7 @@ class Cliente(models.Model):
     cpf = models.OneToOneField(CPF, blank=True, null=True, on_delete=models.CASCADE)
     # ManyToManyField = Muitos para Muitos
     produtos = models.ManyToManyField(Produto, blank=True, null=True)
+    foto = models.ImageField(upload_to='cliente_fotos', height_field=None, width_field=None)
 
     def __str__(self):
         return self.name

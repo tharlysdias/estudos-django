@@ -10,7 +10,7 @@ from .models import Cliente, Telefone, CPF, Produto
 
 class ClienteAdmin(admin.ModelAdmin):
     # Determina os campos que serão mostrados
-    fields = ('name', 'endereco')
+    # fields = ('name', 'endereco')
     # Determina quais os campos que serão mostrados no grid
     list_display = ('id', 'name', 'endereco', 'email')
     # Permite que você filtre os dados por um determinado campo
